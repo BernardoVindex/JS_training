@@ -15,13 +15,20 @@ const addCharact = function(string, separator) {
       stringCached.push(charChached.join(''))
     }
 
-  }
-  
+  } 
   return stringCached
-  
 }
 
 console.log(addCharact('para poder mejorar en javascript', ' '))
 
 // console.log(addCharact('abcde', 1))
 
+const addCharact2 = (string = "", separator = undefined) => {
+  return (
+    (!string)
+      ? console.warn('No ingresaste una cadena de texto')
+      : (separator === undefined)
+        ? console.warn('No ingresaste una cadena de texto')
+        : console.info(string.split(separator))
+  )
+}
