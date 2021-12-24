@@ -6,5 +6,15 @@ const stringLength = (string) => {
     return lenght
 }
 
+characterCounter()
 
-console.log(stringLength('pollo'))
+// Opcione2
+const characterCounter2 = ( string = "" ) => {
+  return (
+    (!string) 
+      ? console.warn('No ingresaste ninguna cadena')
+      : console.info(`La cadena "${string}" tiene ${string.length} caracteres`)
+  )
+}
+
+characterCounter2()
