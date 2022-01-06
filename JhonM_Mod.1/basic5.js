@@ -2,7 +2,7 @@
 
 const reversify = string => {
     if (!string) { console.warn('No has escrito alguna cadena de texto') }
-    
+
     console.log(string.split('').reverse().join(''))
 }
 
