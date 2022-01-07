@@ -6,3 +6,8 @@ const randomFunction = (max, min) =>{
 
 randomFunction(501, 600)
 
+// Solucion J.M.
+
+const aleatorio = () => {
+  console.info(Math.round((Math.random() * 100 ) + 500 ))
+}

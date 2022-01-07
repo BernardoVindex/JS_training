@@ -15,3 +15,27 @@ const factorFunction = number => {
 }
 
 factorFunction(10)
+
+// Solucion J.M.
+
+const factorial = (numero = undefined) => {
+  if(numero === undefined) return console.warn('No ingresaste ningún número')
+  if (typeof numero !== 'number') return console.warn(`El valor "${numero}" ingresado NO es un número`)
+  if (numero === 0) return console.error('El número no puede ser 0')
+  if (Math.sign(numero) === -1) return console.error('El número no pede ser negativo')
+
+  let factorial = 1
+
+  for (let i = numero; i > 1; i--) {
+    factorial *= i
+  }
+
+  return console.info(`El factorial de ${numero} es ${factorial}`)
+}
+
+factorial()
+factorial("5")
+factorial([1,2,3])
+factorial(0)
+factorial(-5)
+factorial(5)

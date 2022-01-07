@@ -1,10 +1,17 @@
 // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
 
 const reversify = string => {
-    if (!string) { console.warn('No has escrito alguna cadena de texto') }
+  if (!string) { console.warn('No has escrito alguna cadena de texto') }
 
-    console.log(string.split('').reverse().join(''))
+  console.log(string.split('').reverse().join(''))
 }
 
 reversify('Pedro pica papas')
 
+// Solución J.M.
+
+const invertirCadena = (cadena = "") => {
+  (!cadena)
+    ? console.warn('No has escrito alguna cadena de texto')
+    : console.log(string.split('').reverse().join(''))
+}
