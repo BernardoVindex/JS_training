@@ -1,52 +1,24 @@
 // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
 
-const alphabetRegEX = (input) => {
-  const text = input.replace(/ /g,'')
-  
-  const voc = /(\a|\e|\i|\o|\u|)/g
-  const con = []
-
-  return console.info(`El texto ${input} tiene ${con} vocales`)
-}
-
-
-
-
-// alphabetRegEx('a ver si sirve')
-
-// const alphabet = (input) => {
-//   const text = input.replace(/ /g,'')
-
-//   const voc = []
-//   const con = []
-
-//   for (let i = 0; i < text.length; i++) {
-//     if(text[i] === 'a') {
-//       voc.push(text[i])
-//     } else {
-//       con.push(text[i])
-//     }
-//   }
-
-//   console.log(voc)
-//   console.log(c)
-// }
-
-
 const alphabet = (input) => {
-  const text = input.replace(/ /g,'')
+  if (!input) return console.warn('No has escrito ningún texto')
+  if (typeof input !== 'string') return console.error('Se a ingresado algo distinto a una cadena de caracteres')
 
+  const text = input.replace(/ /g,'')
   const voc = []
   const con = []
 
   for (let i = 0; i < text.length; i++) {
-    (text[i].test(/(a|e|\i|o|u)/))
+    (/(a|e|\i|o|u)/ig.test(text[i]))
       ? voc.push(text[i])
       : con.push(text[i])
   }
 
-  console.log(voc)
-  console.log(c)
+  console.log(`
+  El texto "${input}" contiene:
+  "${voc.length}" vocales y 
+  "${con.length}" consonantes
+  `)
 }
 
 alphabet('a ver si sirve')
