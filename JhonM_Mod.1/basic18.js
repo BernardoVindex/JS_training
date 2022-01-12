@@ -22,3 +22,22 @@ const alphabet = (input) => {
 }
 
 alphabet('a ver si sirve')
+
+
+// Con RegExp
+
+
+const vocalizer = (input) => {
+  const voc = /[aeiou]/ig
+  const con = /[^aeiou\s]/ig
+  
+  return console.info(`
+  El texto "${input}" contiene:
+  "${input.match(voc).length}" vocales y 
+  "${input.match(con).length}" consonantes
+  `)
+}
+
+vocalizer('a ver si sirve')
+
+// Número de vocales: 34

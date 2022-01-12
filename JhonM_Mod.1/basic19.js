@@ -1,9 +1,14 @@
 // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
 
-const nameChecker = () => {
-  return (/[A-z],+A/g.test())
-            ? console.info('Este SI es un nombre válido')
-            : console.info('Este NO es un nombre válido')
+const nameChecker = name => {
+  debugger
+  if (/\d/g.test(name)) return console.warn(`EL nombre no puede llevar números: "${name.match(/\d/g)}"`)
+  if (/[^A-z\s]/g.test(name)) return console.warn(`EL nombre no puede llevar caracteres espacielas: "${name.match(/[^A-z\s]/g)}"`)
+  if (!/\s+/.test(name)) return console.warn(`Separa el nombre del apellido con un espacio`)
+  if (/^[a-z]/g.test(name)) return console.warn(`Nombre y apellido deben empezar con mayúscula`)
+  if (/\s(?=[a-z])/g.test(name)) return console.warn(`Nombre y apellido deben empezar con mayúscula`)
+  
+  console.log(`El nombre ${name} es valido`)
 }
 
-nameChecker("Jhonathan MirCha")
+nameChecker("Jhonathan mirCha")
