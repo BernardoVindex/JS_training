@@ -23,12 +23,10 @@ const alphabet = (input) => {
 
 alphabet('a ver si sirve')
 
-
 // Con RegExp
 
-
 const vocalizer = (input) => {
-  const voc = /[aeiou]/ig
+  const voc = /aeiou/ig
   const con = /[^aeiou\s]/ig
   
   return console.info(`
@@ -40,4 +38,28 @@ const vocalizer = (input) => {
 
 vocalizer('a ver si sirve')
 
-// Número de vocales: 34
+// Solucion J.M.
+
+const contarLetras = (cadena = "") => {
+  if (!input) return console.warn('No has escrito ningún texto')
+  if (typeof input !== 'string') return console.error('Se a ingresado algo distinto a una cadena de caracteres')  
+
+  let vocales = 0
+  let consonantes = 0
+
+  for (let letra of cadena) {
+    if (/aeiouáéíóúüAEIOUÁÉÍÓÚÜ/.test(letra)) {
+      vocales++
+    }
+    if (/[aeiouáéíóúüAEIOUÁÉÍÓÚÜ]/.test(letra)) {
+      consonantes++
+    }
+  }
+
+  return console.info(`
+  cadena,
+  vocales,
+  consonantes,
+  `)
+}
+

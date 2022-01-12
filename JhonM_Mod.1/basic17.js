@@ -24,4 +24,19 @@ const howMuchFrom = (year, month, day) => {
 
 howMuchFrom(1984,4,3)
 
+// Solucion J.M.
 
+const calcularAnios= (fecha = undefined) => {
+  if (fecha === undefined) return console.warn('No ingresaste la fecha')
+  if (!(fecha instanceof Date)) return console.warn('No ingresaste el formato corecto')
+  
+  let hoyMenosFecha = new Date().getTime() - fecha.getTime()
+  let aniosEnMS = 1000 * 60 * 60 * 24 * 365
+  let aniosHumanos = Math.floor( hoyMenosFecha / aniosEnMS)
+
+  return (Math.sign(aniosHumanos) === -1)
+            ? console.log(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+            : (Math.sign(aniosHumanos) === 1)
+                ? console.log(`Faltan ${aniosHumanos} años desde ${fecha.getFullYear()}`)
+                : console.log(`${fecha.getFullYear()} es el año en curso`)   
+}

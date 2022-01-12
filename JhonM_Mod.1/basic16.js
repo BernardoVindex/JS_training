@@ -10,3 +10,16 @@ const blackFrayday = (price, desc) => {
 }
 
 blackFrayday(1000,20)
+
+// Solucion J.M.
+
+const aplicarDescunto = (monto = undefined, descuento = 0) => {
+  if (monto === undefined) return console.warn('No has escrito el precio del produto')
+  if  (typeof monto !== 'number') return console.warn('Solo se pueden ingresar números')
+  if (monto === 0) return console.error('EL monto no puede ser cero')
+  if (Math.sign(monto) === -1) return console.error('El monto no puede ser negativo')
+  if (descuento === 0) return console.error('EL descuento no puede ser cero')
+  if (Math.sign(descuento) === -1) return console.error('El descuento no puede ser negativo')
+
+  return console.ingo(`$${monto} -${descuento}% = $${monto - ((monto * descuento) / 100)}`)
+}

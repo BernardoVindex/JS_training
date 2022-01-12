@@ -3,8 +3,9 @@
 const binaryToDecimal = (number, mode) => {
   if (!number) return console.warn('No has escrito ningún número')
   if (!mode) return console.warn('EL tipo de número que es (decimál: 10 o binario: 2)')
-  if  (typeof number !== 'numbe') return console.warn('Solo se pueden ingresar números')
-  if  (typeof mode !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (typeof number !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (typeof mode !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (!/2|10/.test(mode)) return console.log('Solo se acepta base binaria "2" y decimal "10"')
   
   return (mode === 10)
             ? console.info(`El número decimál "${number}" en base binaria es: ${number.toString(2)}`)
@@ -17,8 +18,9 @@ const binaryToDecimal = (number, mode) => {
 const towToTen = (digit, mode) => {
   if (!digit) return console.warn('No has escrito ningún número')
   if (!mode) return console.warn('EL tipo de número que es (decimál: 10 o binario: 2)')
-  if  (typeof number !== 'numbe') return console.warn('Solo se pueden ingresar números')
-  if  (typeof mode !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (typeof number !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (typeof mode !== 'numbe') return console.warn('Solo se pueden ingresar números')
+  if (!/2|10/.test(mode)) return console.log('Solo se acepta base binaria "2" y decimal "10"')
   
   const digitS = digit.toString()
   const dataCollect = []
@@ -42,3 +44,16 @@ const towToTen = (digit, mode) => {
 
 towToTen(70, 10)
 
+// Solucion J.M.
+
+const convertirBianrioDecimal = (numero = undefined, base = undefined) => {
+if (numero === undefined) return console.warn('No has escrito ningún número')
+if (base === undefined) return console.warn('EL tipo de número que es (decimál: 10 o binario: 2)')
+if  (typeof number !== 'numbe') return console.warn('Solo se pueden ingresar números')
+if  (typeof mode !== 'numbe') return console.warn('Solo se pueden ingresar números')
+if (!/2|10/.test(mode)) return console.log('Solo se acepta base binaria "2" y decimal "10"')
+
+return (mode === 10)
+            ? console.info(`El número decimál "${number}" en base binaria es: ${number.toString(2)}`)
+            : console.info(`EL dígito binario "${number}" en base decimal es: ${parseInt(number, 2)}`)
+}
