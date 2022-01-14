@@ -22,3 +22,18 @@ const parNonReloaded = a => {
 }
 
 parNonReloaded([1,2,3,4,5,6,7,8,9,0])
+
+
+const separarParesImpares = (arr = undefined) => {
+  if (a === undefined) return console.log (`No se ha ingresado ningún arreglo`)
+  if (!(a instanceof Array)) return console.log(`Solo se puede ingresar arreglos con valores numéricos"[ ]"`)
+  if (arr.length === 0) return console.log('El arreglo está vacío')
+  for (let num of arr) {
+    if (typeof num !== 'number') return console.log(`El valor ${num} ingresado NO es un número`)
+  }
+
+  return console.info({
+    pares: arr.filter(num => num % 2 === 0),
+    impares: arr.filter(num => num % 2 === 1)
+  }) 
+}

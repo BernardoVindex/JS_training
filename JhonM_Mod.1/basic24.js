@@ -13,3 +13,21 @@ const upAndDown = a => {
 }
 
 upAndDown([7,5,7,8,6])
+
+// Solucion J.M.
+
+const ordenarArreglo = (arr = undefined) => {
+  if (a === undefined) return console.log (`No se ha ingresado ningún arreglo`)
+  if (!(a instanceof Array)) return console.log(`Solo se puede ingresar arreglos con valores numéricos"[ ]"`)
+  if (arr.length === 0) return console.log('El arreglo está vacío')
+  for (let num of arr) {
+    if (typeof num !== 'number') return console.log(`El valor ${num} ingresado NO es un número`)
+  }
+
+  return console.info({
+    arr,
+    asc: arr.map(el => el).sort(),
+    desc: arr.map(el => el).reverse()
+
+  })
+}

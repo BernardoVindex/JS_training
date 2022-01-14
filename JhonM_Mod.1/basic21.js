@@ -19,3 +19,22 @@ const sqrPack = a => {
 }
   
 sqrPack([1, -4, 5])
+
+// Solucion J.M.
+
+const devolverCuadrados = (arr = undefined) => {
+  if (a === undefined) return console.log (`No se ha ingresado ningún arreglo`)
+  if (!(a instanceof Array)) return console.log(`Solo se puede ingresar arreglos con valores numéricos"[ ]"`)
+  if (arr.length === 0) return console.log('El arreglo está vacío')
+  for (let num of arr) {
+    if (typeof num !== 'number') return console.log(`El valor ${num} ingresado NO es un número`)
+  }
+
+  const newArr = arr.map( el => el * el)
+
+  return console.log(`
+  El arrego original: ${arr}
+  Arreglo elevado al cuadrado: ${newArr}
+  `)
+
+}
